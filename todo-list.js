@@ -1,29 +1,22 @@
-const todosArray = [{item: "vysát auto", date: "12-23-2024"}];
+const todosArray = ["vysát auto", "nakoupit", "vyčistit akvárko", "UVAŘIT"];
 
 renderItems();
 function addTodo() {
     const inputTextElement = document.querySelector('.js-input-text');
-    const inputDateElement = document.querySelector('.js-input-date');
 
     const item = inputTextElement.value;
-    const date = inputDateElement.value;
 
-    const itemObject = {
-        item,
-        date
-    }
-    todosArray.push(itemObject);
+    todosArray.push(item);
     renderItems();
-    console.log(todosArray)
-
 }
 
 function renderItems() {
     const itemsContainerElement = document.querySelector('.js-items-container');
     let html = '';
 
-    for(let i = 0; i<= todosArray.length-1; i++){
-       html  += `<p>${todosArray[i].item}</p>`;
-    }
+    todosArray.forEach(function(item, index){
+        html  += `<p class="item">${todosArray[index]}</p>`;
+    })
+
     itemsContainerElement.innerHTML = html;
 }

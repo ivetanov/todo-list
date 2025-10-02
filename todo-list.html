@@ -7,12 +7,19 @@
     <link rel="stylesheet" href="/todo-list.css">
 </head>
 <body>
+    <div id="app">
+        <div class="header">
+            <img src="/images/smily_face.png" alt="smily face">
+            <h1>TO-DO</h1>
+            <button onclick="addTodo()">+</button>
 
-    <input class="js-input-text" type="text">
-    <input class="js-input-date" type="date">
-    <button onclick="addTodo()">Add</button>
+        </div>
 
-    <div class="js-items-container"></div>
+        <input placeholder="Add a task" class="js-input-text" type="text">
+
+        <div class="js-items-container todos-container"></div>
+
+    </div>
     
     <script src="/todo-list.js"></script>
 </body>
