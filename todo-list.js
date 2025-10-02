@@ -15,7 +15,7 @@ function renderItems() {
     const itemsContainerElement = document.querySelector('.js-items-container');
     let html = '';
 
-    todosArray.forEach(function(item, index){
+    todosArray.forEach((item, index) => {
         html  += `<p class="item">${todosArray[index]}</p>`;
     })
 
