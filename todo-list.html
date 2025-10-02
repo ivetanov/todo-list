@@ -15,7 +15,9 @@
 
         </div>
 
-        <input placeholder="Add a task" class="js-input-text" type="text">
+        <input placeholder="Add a task" class="js-input-text" type="text" onkeydown="
+            handleEnter(event)
+        ">
 
         <div class="js-items-container todos-container"></div>
 

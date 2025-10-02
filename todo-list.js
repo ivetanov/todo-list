@@ -8,6 +8,7 @@ function addTodo() {
 
     todosArray.push(item);
     renderItems();
+    inputTextElement.value = ""
 }
 
 function renderItems() {
@@ -19,4 +20,7 @@ function renderItems() {
     })
 
     itemsContainerElement.innerHTML = html;
+}
+function handleEnter(event){
+    event.key === "Enter" && addTodo();
 }
