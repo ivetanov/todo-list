@@ -16,11 +16,21 @@ function renderItems() {
     let html = '';
 
     todosArray.forEach((item, index) => {
-        html  += `<p class="item">${todosArray[index]}</p>`;
+        html  += `<div class="item"><p>${todosArray[index]}</p><button class="js-delete-button delete-button">x</button></div>`;
     })
 
     itemsContainerElement.innerHTML = html;
+
+    document.querySelectorAll(".js-delete-button")
+        .forEach((deleteButton, index) => {
+            deleteButton.addEventListener("click", ()=>{
+                todosArray.splice(index, 1);
+                renderItems();
+            })
+        })
+
 }
 function handleEnter(event){
     event.key === "Enter" && addTodo();
 }
+

@@ -85,10 +85,18 @@ body {
     font-weight: bold;
     margin: 0px;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     padding-left: 15px;
     width: 90%;
-
 }
 
+.delete-button{
+    border: none;
+    margin-right: 8px;
+    border-radius: 20px;
+    color: #694d43;
+    background-color: transparent;
+    cursor: pointer;
+    padding: auto;
+}
