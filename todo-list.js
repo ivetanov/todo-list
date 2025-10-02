@@ -1,4 +1,4 @@
-const todosArray = ["vysát auto", "nakoupit", "vyčistit akvárko"];
+const todosArray = ["vysát auto", "nakoupit", "vyčistit akvárko", "UVAŘIT"];
 
 renderItems();
 function addTodo() {
