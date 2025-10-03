@@ -1,4 +1,4 @@
-const todosArray = ["vysát auto", "nakoupit", "vyčistit akvárko", "UVAŘIT"];
+const todosArray = JSON.parse(localStorage.getItem("todos")) || [];
 
 renderItems();
 function addTodo() {
@@ -7,6 +7,8 @@ function addTodo() {
     const item = inputTextElement.value;
 
     todosArray.push(item);
+    localStorage.setItem("todos", JSON.stringify(todosArray))
+
     renderItems();
     inputTextElement.value = ""
 }
@@ -15,7 +17,7 @@ function renderItems() {
     const itemsContainerElement = document.querySelector('.js-items-container');
     let html = '';
 
-    todosArray.forEach((item, index) => {
+    todosArray?.forEach((item, index) => {
         html  += `<div class="item"><p>${todosArray[index]}</p><button class="js-delete-button delete-button">x</button></div>`;
     })
 
@@ -25,6 +27,8 @@ function renderItems() {
         .forEach((deleteButton, index) => {
             deleteButton.addEventListener("click", ()=>{
                 todosArray.splice(index, 1);
+                localStorage.removeItem("todos")
+                localStorage.setItem("todos", JSON.stringify(todosArray))
                 renderItems();
             })
         })
