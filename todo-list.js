@@ -6,8 +6,12 @@ function addTodo() {
 
     const item = inputTextElement.value;
 
-    todosArray.push(item);
-    localStorage.setItem("todos", JSON.stringify(todosArray))
+    if (todosArray.length < 8){
+        todosArray.push(item);
+        localStorage.setItem("todos", JSON.stringify(todosArray))
+    } else {
+        alert("Too much todos! take a break or do older task :-)")
+    }
 
     renderItems();
     inputTextElement.value = ""
