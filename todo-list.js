@@ -6,6 +6,10 @@ function addTodo() {
 
     const item = inputTextElement.value;
 
+    if (!item) {
+        return;
+    }
+
     if (todosArray.length < 8){
         todosArray.push(item);
         localStorage.setItem("todos", JSON.stringify(todosArray))
